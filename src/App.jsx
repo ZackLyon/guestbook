@@ -1,11 +1,12 @@
-import Header from './components/Header';
+import { UserProvider } from './context/UserContext.jsx';
+import Header from './components/Header/Header';
 import Footer from './components/Footer';
 import Home from './views/Home';
-import { UserProvider } from './context/UserContext.jsx';
+import './App.css';
 
 export default function App() {
   return (
-    <div>
+    <div className="app-container">
       <UserProvider>
         <Header />
         <Home />

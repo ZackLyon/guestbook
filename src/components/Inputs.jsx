@@ -1,23 +1,34 @@
 import React, { useState } from 'react';
+import { useNote } from '../context/NoteContext.jsx';
 import { useUser } from '../context/UserContext.jsx';
 
 export default function Inputs() {
   const { user, setUser } = useUser();
+  const { note, setNote } = useNote();
   const [name, setName] = useState('');
+  const [entry, setEntry] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setUser(name);
-    setName('');
+    if (!user && name && entry) {
+      setUser(name);
+      await setNote((prev) => [...prev, { user: name, entry }]);
+      setEntry('');
+    }
+
+    if (user && entry) {
+      await setNote((prev) => [...prev, { user, entry }]);
+      setEntry('');
+    }
   };
 
   return (
     <div>
-      {user ? (
-        <button onClick={(e) => setUser('')}>Sign Out</button>
-      ) : (
-        <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
+        {user ? (
+          <></>
+        ) : (
           <label>
             Name:
             <input
@@ -25,9 +36,15 @@ export default function Inputs() {
               onChange={({ target }) => setName(target.value)}
             ></input>
           </label>
-          <button type="submit">Submit</button>
-        </form>
-      )}
+        )}
+        <input
+          type="textarea"
+          value={entry}
+          onChange={({ target }) => setEntry(target.value)}
+        ></input>
+        <button type="submit">Submit</button>
+        {user ? <button onClick={(e) => setUser('')}>Sign Out</button> : <></>}
+      </form>
     </div>
   );
 }
