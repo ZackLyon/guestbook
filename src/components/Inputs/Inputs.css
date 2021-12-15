@@ -1,0 +1,16 @@
+.inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  width: 10vw;
+  background-color: white;
+  border-radius: 0.5vh;
+}

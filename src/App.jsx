@@ -1,7 +1,7 @@
-import { UserProvider } from './context/UserContext.jsx';
+import { UserProvider } from './context/UserContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
-import Home from './views/Home';
+import Home from './views/Home/Home';
 import './App.css';
 
 export default function App() {

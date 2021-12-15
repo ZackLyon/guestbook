@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNote } from '../context/NoteContext.jsx';
-import { useUser } from '../context/UserContext.jsx';
+import { useNote } from '../../context/NoteContext.jsx';
+import { useUser } from '../../context/UserContext.jsx';
+import style from './Inputs.css';
 
 export default function Inputs() {
   const { user, setUser } = useUser();
@@ -24,21 +25,22 @@ export default function Inputs() {
   };
 
   return (
-    <div>
+    <div className={style.inputContainer}>
       <form onSubmit={handleSubmit}>
         {user ? (
           <></>
         ) : (
           <label>
-            Name:
             <input
               type="text"
+              placeholder="name"
               onChange={({ target }) => setName(target.value)}
             ></input>
           </label>
         )}
         <input
           type="textarea"
+          placeholder="message"
           value={entry}
           onChange={({ target }) => setEntry(target.value)}
         ></input>

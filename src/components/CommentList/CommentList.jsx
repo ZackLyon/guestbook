@@ -1,12 +1,12 @@
 import React from 'react';
-import { useEffect } from 'react/cjs/react.development';
-import { useNote } from '../context/NoteContext.jsx';
+import { useNote } from '../../context/NoteContext.jsx';
+import style from './CommentList.css';
 
 export default function CommentList() {
   const { note } = useNote();
 
   return (
-    <div>
+    <div className={style.commentContainer}>
       {note.map((entry, i) => (
         <div key={i}>
           <div>{entry.user}</div>
