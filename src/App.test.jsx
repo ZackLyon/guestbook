@@ -1,9 +1,13 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
+import { UserProvider } from './context/UserContext.jsx';
 
-it('should pass a test', () => {
-  expect(true).toEqual(true);
+it('should display App view on the screen', () => {
+  const { container } = render(
+    <UserProvider>
+      <App />
+    </UserProvider>
+  );
+
+  expect(container).toMatchSnapshot();
 });
-
-//force netlify preview
