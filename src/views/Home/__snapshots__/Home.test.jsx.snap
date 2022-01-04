@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display Home view on the screen 1`] = `
+<div>
+  <div>
+    <section
+      class="main-section"
+    >
+      <div
+        class="inputContainer"
+      >
+        <form>
+          <label>
+            <input
+              placeholder="name"
+              type="text"
+            />
+          </label>
+          <input
+            placeholder="message"
+            type="textarea"
+            value=""
+          />
+          <button
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      <div
+        class="commentContainer"
+      />
+    </section>
+  </div>
+</div>
+`;

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useUser } from '../../context/UserContext.jsx';
+import { useAuth } from '../../context/AuthContext.jsx';
 import './Header.css';
 
 export default function Header() {
-  const { user } = useUser();
+  const { user } = useAuth();
 
   return (
     <header>

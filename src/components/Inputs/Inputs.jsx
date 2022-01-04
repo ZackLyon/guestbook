@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNote } from '../../context/NoteContext.jsx';
-import { useUser } from '../../context/UserContext.jsx';
+import { useAuth } from '../../context/AuthContext.jsx';
 import style from './Inputs.css';
 
 export default function Inputs() {
-  const { user, setUser } = useUser();
+  const { user, setUser } = useAuth();
   const { note, setNote } = useNote();
   const [name, setName] = useState('');
   const [entry, setEntry] = useState('');
