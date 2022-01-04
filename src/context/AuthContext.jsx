@@ -15,8 +15,13 @@ const AuthProvider = ({ children }) => {
     return didLoginSucceed;
   };
 
+  const logout = (loggingOut) => {
+    setUser(null);
+    loggingOut();
+  };
+
   return (
-    <AuthContext.Provider value={{ user, setUser, login }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

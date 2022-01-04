@@ -2,42 +2,30 @@ import React, { useState } from 'react';
 import { useNote } from '../../context/NoteContext.jsx';
 import { useAuth } from '../../context/AuthContext.jsx';
 import style from './Inputs.css';
+import { useHistory } from 'react-router-dom';
 
 export default function Inputs() {
-  const { user, setUser } = useAuth();
+  const { user, logout } = useAuth();
   const { note, setNote } = useNote();
-  const [name, setName] = useState('');
   const [entry, setEntry] = useState('');
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!user && name && entry) {
-      setUser(name);
-      await setNote((prev) => [...prev, { user: name, entry }]);
-      setEntry('');
-    }
-
-    if (user && entry) {
+    if (entry) {
       await setNote((prev) => [...prev, { user, entry }]);
       setEntry('');
     }
   };
 
+  const handleLogout = () => {
+    logout(() => history.push('/login'));
+  };
+
   return (
     <div className={style.inputContainer}>
       <form onSubmit={handleSubmit}>
-        {user ? (
-          <></>
-        ) : (
-          <label>
-            <input
-              type="text"
-              placeholder="name"
-              onChange={({ target }) => setName(target.value)}
-            ></input>
-          </label>
-        )}
         <input
           type="textarea"
           placeholder="message"
@@ -45,7 +33,7 @@ export default function Inputs() {
           onChange={({ target }) => setEntry(target.value)}
         ></input>
         <button type="submit">Submit</button>
-        {user ? <button onClick={(e) => setUser('')}>Sign Out</button> : <></>}
+        <button onClick={handleLogout}>Sign Out</button>
       </form>
     </div>
   );
