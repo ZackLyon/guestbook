@@ -1,15 +1,8 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Login from './views/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Home from './views/Home/Home';
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
@@ -25,9 +18,9 @@ export default function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/">
+            <PrivateRoute path="/">
               <Home />
-            </Route>
+            </PrivateRoute>
           </Switch>
           <Footer />
         </Router>
