@@ -9,24 +9,27 @@ exports[`should display Home view on the screen 1`] = `
       <div
         class="inputContainer"
       >
-        <form>
-          <label>
-            <input
-              placeholder="name"
-              type="text"
-            />
-          </label>
-          <input
-            placeholder="message"
-            type="textarea"
-            value=""
-          />
-          <button
-            type="submit"
+        <div
+          class="messageControls"
+        >
+          <form
+            class="messageForm"
           >
-            Submit
+            <input
+              placeholder="message"
+              type="textarea"
+              value=""
+            />
+            <button
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+          <button>
+            Sign Out
           </button>
-        </form>
+        </div>
       </div>
       <div
         class="commentContainer"

@@ -13,36 +13,38 @@ exports[`should display App view on the screen 1`] = `
         Welcome, Guest
       </h3>
     </header>
-    <div>
-      <section
-        class="main-section"
+    <div
+      class="loginPage"
+    >
+      <form
+        class="loginForm"
       >
-        <div
-          class="inputContainer"
+        <label
+          for="username"
         >
-          <form>
-            <label>
-              <input
-                placeholder="name"
-                type="text"
-              />
-            </label>
-            <input
-              placeholder="message"
-              type="textarea"
-              value=""
-            />
-            <button
-              type="submit"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-        <div
-          class="commentContainer"
+          Username
+        </label>
+        <input
+          id="username"
+          name="username"
+          value=""
         />
-      </section>
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          id="password"
+          name="password"
+          value=""
+        />
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
     </div>
     <div />
   </div>

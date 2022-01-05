@@ -8,9 +8,9 @@ export default function CommentList() {
   return (
     <div className={style.commentContainer}>
       {note.map((entry, i) => (
-        <div key={i}>
-          <div>{entry.user}</div>
-          <div>{entry.entry}</div>
+        <div className={style.messageBox} key={i}>
+          <div className={style.userName}>{entry.user}</div>
+          <div className={style.entry}>{entry.entry}</div>
         </div>
       ))}
     </div>

@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import App from './App';
-import { UserProvider } from './context/UserContext.jsx';
+import { AuthProvider } from './context/AuthContext.jsx';
 
 it('should display App view on the screen', () => {
   const { container } = render(
-    <UserProvider>
+    <AuthProvider>
       <App />
-    </UserProvider>
+    </AuthProvider>
   );
 
   expect(container).toMatchSnapshot();

@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
-import Home from './Home';
+import Login from './Login';
 import { AuthProvider } from '../../context/AuthContext.jsx';
 
-it('should display Home view on the screen', () => {
+it('should display Login view on the screen', () => {
   const { container } = render(
     <AuthProvider>
-      <Home />
+      <Login />
     </AuthProvider>
   );
 

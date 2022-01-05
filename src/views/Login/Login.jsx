@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { useHistory } from 'react-router-dom';
-import './Login.css';
+import style from './Login.css';
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -22,8 +22,8 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className={style.loginPage}>
+      <form className={style.loginForm} onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
         <input
           id="username"

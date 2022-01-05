@@ -25,16 +25,18 @@ export default function Inputs() {
 
   return (
     <div className={style.inputContainer}>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="textarea"
-          placeholder="message"
-          value={entry}
-          onChange={({ target }) => setEntry(target.value)}
-        ></input>
-        <button type="submit">Submit</button>
+      <div className={style.messageControls}>
+        <form className={style.messageForm} onSubmit={handleSubmit}>
+          <input
+            type="textarea"
+            placeholder="message"
+            value={entry}
+            onChange={({ target }) => setEntry(target.value)}
+          ></input>
+          <button type="submit">Submit</button>
+        </form>
         <button onClick={handleLogout}>Sign Out</button>
-      </form>
+      </div>
     </div>
   );
 }
