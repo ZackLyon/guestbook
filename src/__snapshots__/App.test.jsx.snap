@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display App view on the screen 1`] = `
+<div>
+  <div
+    class="app-container"
+  >
+    <header>
+      <h1>
+        Guestbook
+      </h1>
+      <h3>
+        Welcome, Guest
+      </h3>
+    </header>
+    <div
+      class="loginPage"
+    >
+      <form
+        class="loginForm"
+      >
+        <label
+          for="username"
+        >
+          Username
+        </label>
+        <input
+          id="username"
+          name="username"
+          value=""
+        />
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          id="password"
+          name="password"
+          value=""
+        />
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <div />
+  </div>
+</div>
+`;

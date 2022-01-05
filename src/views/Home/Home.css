@@ -1,0 +1,6 @@
+section {
+  min-height: 90vh;
+  display: grid;
+  grid-template-rows: 25vh 4fr;
+  background-color: black;
+}
